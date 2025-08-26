@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Pénétration Consciente - Page de Vente</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #4d0000, #990000);
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    h2 {
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .ebook-cover {
+      width: 300px;
+      margin: 20px auto;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin: 30px 0;
+      font-size: 1.1rem;
+    }
+
+    .feature {
+      background: rgba(255,255,255,0.1);
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #FFD700;
+      margin: 20px 0;
+    }
+
+    .old-price {
+      text-decoration: line-through;
+      font-size: 1rem;
+      color: #ffcccc;
+    }
+
+    /* Compteur */
+    .countdown {
+      margin: 20px 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 15px;
+      border-radius: 10px;
+      color: #FFD700;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #cc0000;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .cta-btn:hover {
+      background: #ff1a1a;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>La Pénétration Consciente</h1>
+    <h2>L’art d’entrer en elle avec respect & plaisir intense</h2>
+
+    <!-- Image de couverture -->
+    <img src="A_promotional_digital_graphic_design_advertisement.png" alt="Couverture Ebook" class="ebook-cover">
+
+    <!-- Points forts -->
+    <div class="features">
+      <div class="feature">📖 Ebook complet</div>
+      <div class="feature">🔥 12 rituels intimes</div>
+      <div class="feature">❤️ 6 positions conscientes</div>
+      <div class="feature">🎧 4 audios-guidés exclusifs</div>
+    </div>
+
+    <!-- Prix -->
+    <div class="price">9 900 FCFA</div>
+    <div class="old-price">au lieu de 12 000 FCFA</div>
+
+    <!-- Compteur d'urgence -->
+    <div class="countdown">
+      ⏳ Offre valable encore : <span id="timer"></span>
+    </div>
+
+    <!-- Bouton Call-to-Action -->
+    <a href="https://wa.me/2250787983026" class="cta-btn">📥 TÉLÉCHARGE MAINTENANT</a>
+
+    <footer>
+      © 2025 - Tous droits réservés | Guide intime exclusif
+    </footer>
+  </div>
+
+  <script>
+    // Définir la date limite (ici 48h après ouverture de la page)
+    var deadline = new Date(Date.now() + 48 * 60 * 60 * 1000).getTime();
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var t = deadline - now;
+
+      if (t > 0) {
+        var hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((t % (1000 * 60)) / 1000);
+        document.getElementById("timer").innerHTML = hours + "h " + minutes + "m " + seconds + "s";
+      } else {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "❌ Offre expirée";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
